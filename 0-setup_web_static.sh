@@ -30,7 +30,7 @@ if [ -f /etc/nginx/sites-enabled/default ]; then
 fi
 
 # Establish a localhost server
-new_server="server {\n\n\tlisten localhost:80;\n\troot /var/www/html;\n\n\tindex index.html index.htm index.nginx-debian.html;\n\n\tserver_name localhost;\n\n\tadd_header X-Served-By 2450-web-01 always;\n\n\terror_page 404 /hbnb_static/;\n\n\tlocation /hbnb_static/ {\n\t\talias /data/web_static/current/;\n\t\tindex index.html;\n\t}\n\n\tlocation / {\n\t\ttry_files $uri $uri/ =404;\n\t}\n}";
+new_server="server {\n\n\tlisten localhost:80;\n\troot /var/www/html;\n\n\tindex index.html index.htm index.nginx-debian.html;\n\n\tserver_name localhost;\n\n\tadd_header X-Served-By 2450-web-01 always;\n\n\terror_page 404 /hbnb_static/;\n\n\tlocation /hbnb_static/ {\n\t\talias /data/web_static/current/;\n\t\tindex index.html;\n\t}\n\n\tlocation / {\n\t\ttry_files \$uri \$uri/ =404;\n\t}\n}";
 
 grep "listen localhost:80" -q "${file_to_update}" || echo -e "${new_server}" >> "${file_to_update}";
 
