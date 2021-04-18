@@ -22,7 +22,7 @@ ln -sf /data/web_static/releases/test/ /data/web_static/current;
 chown -R ubuntu:ubuntu /data/;
 
 # Variables to put the location alias
-index_tester="\n\tlocation /hbnb_static/ {\n\t\talias /data/web_static/current/;\n\t\tindex index.html;\n\t}";
+index_tester="\n\tlocation /hbnb_static/ {\n\t\talias /data/web_static/current/;\n\t\tautoindex off;\n\t}";
 file_to_update="/etc/nginx/sites-enabled/default";
 
 # Checks if /etc/nginx/sites-enabled/default exists and updates it if so.
