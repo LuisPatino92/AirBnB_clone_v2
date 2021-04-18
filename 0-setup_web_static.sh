@@ -16,6 +16,7 @@ mkdir -p /data/web_static/shared/;
 
 echo "<h1>FakeHTML for testing pourposes</h1>" >> /data/web_static/releases/test/index.html;
 
+rm /data/web_static/current || true;
 ln -sf /data/web_static/releases/test/ /data/web_static/current;
 
 chown -R ubuntu:ubuntu /data/;
