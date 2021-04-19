@@ -22,12 +22,12 @@ ln -sf /data/web_static/releases/test/ /data/web_static/current;
 chown -R ubuntu:ubuntu /data/;
 
 # Variables to put the location alias
-# index_tester="\n\tlocation /hbnb_static/ {\n\t\talias /data/web_static/current/;\n\t\tautoindex off;\n\t}";
+index_tester="\n\tlocation /hbnb_static/ {\n\t\talias /data/web_static/current/;\n\t\tautoindex off;\n\t}";
 file_to_update="/etc/nginx/sites-enabled/default";
 
 # Checks if /etc/nginx/sites-enabled/default exists and updates it if so.
 if [ -f /etc/nginx/sites-enabled/default ]; then
-	sed -i "38i\${index_tester}" "${file_to_update}";
+	grep "location /hbnb_static/ {" -q "${file_to_update}" || sed -i "/^listen 80 default_server;/a\ ${index_tester}" "${file_to_update}";
 fi
 
 
