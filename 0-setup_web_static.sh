@@ -27,7 +27,7 @@ file_to_update="/etc/nginx/sites-enabled/default";
 
 # Checks if /etc/nginx/sites-enabled/default exists and updates it if so.
 if [ -f /etc/nginx/sites-enabled/default ]; then
-	grep "location /hbnb_static/ {" -q "${file_to_update}" || sed -i "/^\tserver_name;/a\ ${index_tester}" "${file_to_update}";
+	sed -i "38i\${index_tester}" "${file_to_update}";
 fi
 
 
