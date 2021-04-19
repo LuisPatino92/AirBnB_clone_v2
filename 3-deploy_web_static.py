@@ -98,6 +98,6 @@ def deploy():
     print(main_path)
     if main_path is None:
         return False
-    # result = do_deploy(main_path)
+    result = do_deploy(main_path)
 
-    return True
+    return result
