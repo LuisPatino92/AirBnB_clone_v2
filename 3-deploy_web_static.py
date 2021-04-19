@@ -64,7 +64,7 @@ def do_deploy(archive_path):
     if check.failed:
         return False
 
-    check = run('rm {}/* 2>/dev/null'.format(destination_path)
+    check = run('rm {}/* 2>/dev/null'.format(destination_path))
     if check.failed:
         return False
 
