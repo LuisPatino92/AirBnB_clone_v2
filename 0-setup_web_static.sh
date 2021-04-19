@@ -32,4 +32,4 @@ fi
 
 
 service nginx status >> /dev/null || service nginx start;
-nginx -s reload;
+service nginx restart;
