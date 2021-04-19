@@ -33,6 +33,7 @@ def do_pack():
               "{}Bytes".format(file_name, size_of.st_size))
     return("versions/{}".format(file_name))
 
+
 def do_deploy(archive_path):
     """Upload a compressed file and unpacks it in the servers"""
     try:
@@ -52,13 +53,13 @@ def do_deploy(archive_path):
         return False
 
     # Unpack the .tgz tho desired path
-    check = run('tar -xzf /tmp/{} -C '.format(archive_path.split('/')[1]) + \
+    check = run('tar -xzf /tmp/{} -C '.format(archive_path.split('/')[1]) +
                 '{}'.format('{}'.format(destination_path)))
     if check.failed:
         return False
 
     # Move the unpacked files
-    check = run('mv {}/web_static/* '.format(destination_path) + \
+    check = run('mv {}/web_static/* '.format(destination_path) +
                 '{}/'.format(destination_path))
     if check.failed:
         return False
