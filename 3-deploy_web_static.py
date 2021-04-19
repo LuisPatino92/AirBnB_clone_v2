@@ -31,7 +31,7 @@ def do_pack():
     else:
         print("web_static packed: {} -> ".format(file_name) +
               "{}Bytes".format(size_of.st_size))
-    return("versions/{}".format(file_name))
+    return("{}".format(file_name))
 
 
 def do_deploy(archive_path):
@@ -95,8 +95,9 @@ def deploy():
     """This function do a whole deploy"""
 
     main_path = do_pack()
+    print(main_path)
     if main_path is None:
         return False
-    result = do_deploy(main_path)
+    # result = do_deploy(main_path)
 
-    return result
+    return True
