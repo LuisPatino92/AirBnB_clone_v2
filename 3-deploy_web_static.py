@@ -29,8 +29,8 @@ def do_pack():
     if (check.failed):
         return None
     else:
-        print("web_static packed: {} -> " +
-              "{}Bytes".format(file_name, size_of.st_size))
+        print("web_static packed: {} -> ".format(file_name) +
+              "{}Bytes".format(size_of.st_size))
     return("versions/{}".format(file_name))
 
 
