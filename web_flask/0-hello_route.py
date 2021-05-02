@@ -12,4 +12,4 @@ def hbtn():
     return 'Hello HBNB!'
 
 if __name__ == "__main__":
-    hbtn()
+    app.run()
