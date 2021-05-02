@@ -8,5 +8,7 @@ app = Flask(__name__)
 
 @app.route('/')
 app.url_map.strict_slashes = False
+
+
 def hbtn():
     return 'Hello HBNB!'
