@@ -21,6 +21,7 @@ def hbnb():
 def parrot(text):
     return 'C {}'.format(text.replace('_', ' '))
 
+
 @app.route('/python')
 @app.route('/python/<text>')
 def parrot_py(text='is_cool'):
