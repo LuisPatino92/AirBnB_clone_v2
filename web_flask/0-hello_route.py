@@ -4,11 +4,9 @@
 from flask import Flask
 
 app = Flask(__name__)
-
-
-@app.route('/')
 app.url_map.strict_slashes = False
 
 
+@app.route('/')
 def hbtn():
     return 'Hello HBNB!'
